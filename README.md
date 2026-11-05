@@ -6,3 +6,6 @@
 - `include/stats.h` — интерфейс модуля (объявления функций)
 - `src/stats.c` — реализация функций (математика и арифметика указателей)
 - `src/main.c` — тестовая программа для проверки
+## Сборка и запуск 
+gcc -std=c99 -Wall -Wextra -Iinclude src/stats.c src/main.c -o stats_test -lm
+./stats_test
