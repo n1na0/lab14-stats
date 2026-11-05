@@ -17,7 +17,7 @@ int main(void) {
     printf("Среднеквадратичное отклонение: %.2f\n\n", d);
 
     /* 3. Ищем выбросы */
-    /* Будем использовать порог mean + 1*dev (можешь поменять на 2*dev или 3*dev) */
+    //порог mean + 1*dev
     double threshold = 1.0 * d; 
     const double *outlier = first_outlier(data, n, m, threshold);
 
