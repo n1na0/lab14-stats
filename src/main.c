@@ -16,9 +16,8 @@ int main(void) {
     double d = deviation(data, m, n);
     printf("Среднеквадратичное отклонение: %.2f\n\n", d);
 
-    /* 3. Ищем выбросы */
-    //порог mean + 1*dev
-    double threshold = 1.0 * d; 
+   // Порог поиска выбросов: одно среднеквадратичное отклонение
+    double threshold = 1.0 * d;
     const double *outlier = first_outlier(data, n, m, threshold);
 
     if (outlier == NULL) {
@@ -28,7 +27,7 @@ int main(void) {
         
         /* Пока указатель не NULL, выводим и ищем дальше, начиная со следующего */
         while (outlier != NULL) {
-            printf("  Значение: %.2f (индекс %ld)\n", 
+            printf("  Значение: %.2f (индекс %td)\n", 
                    *outlier, outlier - data);
             
             /* Ищем следующий выброс, начиная со следующего элемента */
